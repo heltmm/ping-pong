@@ -10,18 +10,19 @@ function toArrayOfNumbers(number){
 //function to change a number based on the rules listed in the specifications
 function toPingPongRules(number){
   if (number % 15 === 0){
-    number = "ping-pong";
+    number = '<img src="img/pingRight.png" alt="paddle">Ping-Pong<img src="img/pingLeft.png" alt="paddle">';
     return number;
   }else if (number % 5 === 0){
-    number = "pong";
+    number = '<img src="img/pingLeft.png" alt="paddle">Pong';
     return number;
   }else if (number % 3 === 0){
-    number = "ping";
+    number = '<img src="img/pingRight.png" alt="paddle">Ping';
     return number;
   }else{
     return number;
   }
 }
+//loop through array and append each item in a p tag
 function display(array){
   array.forEach(function(element){
     $("#output").append("<p>"+element+"</p>");
