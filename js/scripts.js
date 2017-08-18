@@ -22,6 +22,11 @@ function toPingPongRules(number){
     return number;
   }
 }
+function display(array){
+  array.forEach(function(element){
+    $("#output").append("<p>"+element+"</p>");
+  })
+}
 
 
 
@@ -33,7 +38,9 @@ $(document).ready(function(){
     event.preventDefault();
     $("#output").empty();
     var num = $("#userInput").val();
-    arrayWithRules = toArrayOfNumbers(num).map(toPingPongRules);
-    $("#output").append(arrayWithRules);
+    // arrayWithRules = toArrayOfNumbers(num).map(toPingPongRules);
+    //$("#output").append(arrayWithRules);
+    // display(arrayWithRules);
+    display(toArrayOfNumbers(num).map(toPingPongRules))
   });
 });
