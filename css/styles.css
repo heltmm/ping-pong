@@ -19,9 +19,9 @@ body{
 .col-sm-3 > *{
   margin-left: 10px;
 }
-.col-sm-3 h3{
-  margin-top: 10px;
-}
 .col-sm-3 h5{
   color: #729ce0;
+}
+.sidebar{
+  height: 100vh;
 }

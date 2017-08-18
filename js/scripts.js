@@ -20,17 +20,16 @@ function toPingPongRules(number){
     return number;
   }else{
     return number;
-  }
-}
+  };
+};
 //loop through array and append each item in a p tag
 function display(array){
-  array.forEach(function(element){
-    $("#output").append("<li>"+element+"</li>");
-  })
-}
-
-
-
+  for (var i = 0; i < array.length; i++){
+    //$("#output").append("<li>"+element+"</li>");
+    setTimeout(function(x) { return function() { $("#output").append("<li>"+array[x]+"</li>"); }; }(i), 500*i);
+    // 1 2 3 4 5
+  }
+};
 //front end logic
 //puts number user enters into variable number
 //removes all html from output div
@@ -39,9 +38,6 @@ $(document).ready(function(){
     event.preventDefault();
     $("#output").empty();
     var num = $("#userInput").val();
-    // arrayWithRules = toArrayOfNumbers(num).map(toPingPongRules);
-    //$("#output").append(arrayWithRules);
-    // display(arrayWithRules);
-    display(toArrayOfNumbers(num).map(toPingPongRules))
+    display(toArrayOfNumbers(num).map(toPingPongRules));
   });
 });
