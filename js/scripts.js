@@ -36,7 +36,6 @@ function displayFast(array){
 };
 //front end logic
 //puts number user enters into variable number
-//removes all html from output div
 $(document).ready(function(){
   //run normal rules if ping Pong is clicked
   $("#normal").click(function(){
@@ -48,6 +47,9 @@ $(document).ready(function(){
       $("#again").show();
       displaySlow(toArrayOfNumbers(num).map(toPingPongRules));
       displayFast(toArrayOfNumbers(num).map(toPingPongRules));
+      if(num ===""){
+        alert("Enter a Number and Try Again!")
+      };
     });
   });
   //run in reverse if pong ping is clicked
@@ -60,8 +62,12 @@ $(document).ready(function(){
       $("#again").show();
       displaySlow(toArrayOfNumbers(num).reverse().map(toPingPongRules));
       displayFast(toArrayOfNumbers(num).reverse().map(toPingPongRules));
+      if(num ===""){
+        alert("Enter a Number and Try Again!")
+      };
     });
   })
+  //reloads page if user clicks
   $("#again").click(function(){
     location.reload();
   });
