@@ -1,4 +1,12 @@
-
+//back end logic
+//function to create an array of incremental numbers
+function toArrayOfNumbers(number){
+  arrayOfNumbers = [];
+  for (var i=0; i<number; i++){
+    arrayOfNumbers[i] = i + 1;
+  };
+  return arrayOfNumbers;
+};
 
 
 
@@ -10,6 +18,7 @@ $(document).ready(function(){
   $("#userForm").submit(function(event){
     event.preventDefault();
     $("#output").empty();
-    var number = $("#userInput").val();
+    var num = $("#userInput").val();
+    $("#output").append(toArrayOfNumbers(num));
   });
 });
