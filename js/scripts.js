@@ -25,14 +25,15 @@ function toPingPongRules(number){
 //loop through array every .5 seconds and replace the previous element with the index of that array
 function displaySlow(array){
   for (var i = 0; i < array.length; i++){
-    setTimeout(function(x) { return function() { $("#ping").html(array[x]); }; }(i), 500*i);
+    setTimeout(function(x) { return function() { $("#displaySlowOutput").html(array[x]); }; }(i), 600*i);
   };
 };
-// function displayEnd(array){
-//   array.forEach(function(element){
-//     $("#output").append("<p>"+element+"</p>");
-//   })
-// }
+//loop throug array and apend the index of that array
+function displayFast(array){
+  array.forEach(function(element){
+    $("#displayFastOutput").append("<p>"+element+"</p>");
+  })
+}
 //front end logic
 //puts number user enters into variable number
 //removes all html from output div
@@ -41,18 +42,29 @@ $(document).ready(function(){
   $("#normal").click(function(){
     $("#userForm").submit(function(event){
       event.preventDefault();
-      $("#table").show();
       var num = $("#userInput").val();
+      $("#table").show();
+      $("#normal").hide();
+      $("#reverse").hide();
+      $("#again").show();
       displaySlow(toArrayOfNumbers(num).map(toPingPongRules));
+      displayFast(toArrayOfNumbers(num).map(toPingPongRules));
     });
   });
   //run in reverse if pong ping is clicked
   $("#reverse").click(function(){
     $("#userForm").submit(function(event){
       event.preventDefault();
-      $("#table").show();
       var num = $("#userInput").val();
+      $("#table").show();
+      $("#normal").hide();
+      $("#reverse").hide();
+      $("#again").show();
       displaySlow(toArrayOfNumbers(num).reverse().map(toPingPongRules));
+      displayFast(toArrayOfNumbers(num).reverse().map(toPingPongRules));
     });
   })
+  $("#again").click(function(){
+    location.reload();
+  });
 });
