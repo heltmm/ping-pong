@@ -31,7 +31,7 @@ function displaySlow(array){
 //loop throug array and apend the index of that array
 function displayFast(array){
   array.forEach(function(element){
-    $("#displayFastOutput").append("<p>"+element+"</p>");
+    $("#displayFastOutput").append("<li>"+element+"</li>");
   })
 }
 //front end logic
