@@ -20,7 +20,7 @@ _This webpage takes a number inputted by the user and displays a text version of
 
 * _Open Web Browser._
 * _type https://heltmm.github.io/ping-pong into url bar._
-* _Or click this link: [Ping Pong](https://heltmm.github.io/language-selector)_
+* _Or click this link: [Ping Pong](https://heltmm.github.io/ping-pong)_
 
 ## Known Bugs
 
