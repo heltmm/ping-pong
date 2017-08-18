@@ -4,7 +4,7 @@
   text-align: center;
 }
 .col-sm-3{
-  background-color: red;
+  background-color: #c60303;
   height: 100vh;
 }
 .row{
@@ -12,4 +12,16 @@
 }
 img {
   width: 50px;
+}
+body{
+  background-color: #eaecef;
+}
+.col-sm-3 > *{
+  margin-left: 10px;
+}
+.col-sm-3 h3{
+  margin-top: 10px;
+}
+.col-sm-3 h5{
+  color: #729ce0;
 }
