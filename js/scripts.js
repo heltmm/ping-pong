@@ -22,22 +22,37 @@ function toPingPongRules(number){
     return number;
   };
 };
-//loop through array and append each item in a p tag
-function display(array){
+//loop through array every .5 seconds and replace the previous element with the index of that array
+function displaySlow(array){
   for (var i = 0; i < array.length; i++){
-    //$("#output").append("<li>"+element+"</li>");
-    setTimeout(function(x) { return function() { $("#output").append("<li>"+array[x]+"</li>"); }; }(i), 500*i);
-    // 1 2 3 4 5
-  }
+    setTimeout(function(x) { return function() { $("#ping").html(array[x]); }; }(i), 500*i);
+  };
 };
+// function displayEnd(array){
+//   array.forEach(function(element){
+//     $("#output").append("<p>"+element+"</p>");
+//   })
+// }
 //front end logic
 //puts number user enters into variable number
 //removes all html from output div
 $(document).ready(function(){
-  $("#userForm").submit(function(event){
-    event.preventDefault();
-    $("#output").empty();
-    var num = $("#userInput").val();
-    display(toArrayOfNumbers(num).map(toPingPongRules));
+  //run normal rules if ping Pong is clicked
+  $("#normal").click(function(){
+    $("#userForm").submit(function(event){
+      event.preventDefault();
+      $("#table").show();
+      var num = $("#userInput").val();
+      displaySlow(toArrayOfNumbers(num).map(toPingPongRules));
+    });
   });
+  //run in reverse if pong ping is clicked
+  $("#reverse").click(function(){
+    $("#userForm").submit(function(event){
+      event.preventDefault();
+      $("#table").show();
+      var num = $("#userInput").val();
+      displaySlow(toArrayOfNumbers(num).reverse().map(toPingPongRules));
+    });
+  })
 });

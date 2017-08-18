@@ -25,3 +25,12 @@ body{
 .sidebar{
   height: 100vh;
 }
+#output p {
+  margin-top: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+#table{
+  display: none;
+  width: 100%;
+}

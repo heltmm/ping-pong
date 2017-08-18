@@ -31,11 +31,13 @@
         <form id="userForm">
           <label for="userInput"><strong>Enter a number:</strong></label>
           <input id="userInput" type="number">
-          <button type="submit" class="btn btn-primary">Ping Pong!</button>
-          <button type="submit" class="btn btn-danger">!Pong Ping</button>
+          <button id="normal" class="btn btn-primary">Ping Pong!</button>
+          <button id ="reverse" class="btn btn-danger">!Pong Ping</button>
         </form>
-        <ul id="output">
-        </ul>
+        <div id="output">
+          <p><span id="ping"></span></p>
+          <img id="table" src="img/table.png" alt="">
+        </div>
       </div>
     </div>
   </body>
