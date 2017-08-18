@@ -25,7 +25,7 @@ function toPingPongRules(number){
 //loop through array every .5 seconds and replace the previous element with the index of that array
 function displaySlow(array){
   for (var i = 0; i < array.length; i++){
-    setTimeout(function(x) { return function() { $("#displaySlowOutput").html(array[x]); }; }(i), 600*i);
+    setTimeout(function(x) { return function() { $("#displaySlowOutput").html(array[x]); }; }(i), 500*i);
   };
 };
 //loop throug array and apend the index of that array
@@ -44,8 +44,7 @@ $(document).ready(function(){
       event.preventDefault();
       var num = $("#userInput").val();
       $("#table").show();
-      $("#normal").hide();
-      $("#reverse").hide();
+      $("#userForm").hide();
       $("#again").show();
       displaySlow(toArrayOfNumbers(num).map(toPingPongRules));
       displayFast(toArrayOfNumbers(num).map(toPingPongRules));
@@ -57,8 +56,7 @@ $(document).ready(function(){
       event.preventDefault();
       var num = $("#userInput").val();
       $("#table").show();
-      $("#normal").hide();
-      $("#reverse").hide();
+      $("#userForm").hide();
       $("#again").show();
       displaySlow(toArrayOfNumbers(num).reverse().map(toPingPongRules));
       displayFast(toArrayOfNumbers(num).reverse().map(toPingPongRules));

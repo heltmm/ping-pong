@@ -42,3 +42,6 @@ body{
 #again{
   display: none;
 }
+#displayFastOutput img{
+  display: none;
+}
