@@ -32,8 +32,8 @@ function displaySlow(array){
 function displayFast(array){
   array.forEach(function(element){
     $("#displayFastOutput").append("<li>"+element+"</li>");
-  })
-}
+  });
+};
 //front end logic
 //puts number user enters into variable number
 //removes all html from output div
