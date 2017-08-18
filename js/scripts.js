@@ -1,13 +1,27 @@
 //back end logic
-//function to create an array of incremental numbers
+//function to create an array of incremental numbers from one to number
 function toArrayOfNumbers(number){
-  arrayOfNumbers = [];
+  var arrayOfNumbers = [];
   for (var i=0; i<number; i++){
     arrayOfNumbers[i] = i + 1;
   };
   return arrayOfNumbers;
 };
-
+//function to change a number based on the rules listed in the specifications
+function toPingPongRules(number){
+  if (number % 15 === 0){
+    number = "ping-pong";
+    return number;
+  }else if (number % 5 === 0){
+    number = "pong";
+    return number;
+  }else if (number % 3 === 0){
+    number = "ping";
+    return number;
+  }else{
+    return number;
+  }
+}
 
 
 
@@ -19,6 +33,7 @@ $(document).ready(function(){
     event.preventDefault();
     $("#output").empty();
     var num = $("#userInput").val();
-    $("#output").append(toArrayOfNumbers(num));
+    arrayWithRules = toArrayOfNumbers(num).map(toPingPongRules);
+    $("#output").append(arrayWithRules);
   });
 });
