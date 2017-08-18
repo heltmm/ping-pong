@@ -25,7 +25,7 @@ function toPingPongRules(number){
 //loop through array and append each item in a p tag
 function display(array){
   array.forEach(function(element){
-    $("#output").append("<p>"+element+"</p>");
+    $("#output").append("<li>"+element+"</li>");
   })
 }
 
